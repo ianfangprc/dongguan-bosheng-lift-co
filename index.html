@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>东莞博升电梯有限公司 | 专业维保与销售</title>
+    <meta name="description" content="东莞博升电梯专注于电梯维修、保养、销售及安装。提供24小时紧急救援服务，拥有A级特种设备安装改造维修资质，服务东莞及大湾区。" />
+    <meta name="keywords" content="东莞电梯, 电梯维修, 电梯保养, 电梯销售, 老旧梯改造, 电梯安装, 东莞博升电梯, 别墅电梯, 货梯, 24小时电梯救援" />
+    <meta name="author" content="东莞博升电梯有限公司" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook / WeChat Shared Links -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.boshenglift.com/" />
+    <meta property="og:title" content="东莞博升电梯 | 您的安全，就是我们的使命！" />
+    <meta property="og:description" content="专业电梯销售、安装、维保服务商。24小时极速响应，标准化作业流程，为您提供安全舒适的垂直交通解决方案。" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" />
+    <meta property="og:locale" content="zh_CN" />
+
+    <!-- Schema.org Structured Data (JSON-LD) for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "东莞博升电梯有限公司",
+      "alternateName": "Dongguan Bosheng Lift Co., Ltd.",
+      "url": "https://www.boshenglift.com",
+      "logo": "https://www.boshenglift.com/logo.png",
+      "description": "东莞博升电梯有限公司是一家集电梯销售、安装、维修、保养、改造于一体的专业化服务商。",
+      "telephone": "+86-133-6067-2276",
+      "email": "boshenglift@qq.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "东城街道主山社区松毛岭街30号3楼",
+        "addressLocality": "东莞市",
+        "addressRegion": "广东省",
+        "postalCode": "523000",
+        "addressCountry": "CN"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+    
+    <!-- Using Tailwind CDN for quick styling as per current setup -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Noto Sans SC', 'sans-serif'],
+            },
+            colors: {
+              industrial: {
+                900: '#0f172a', // Slate 900
+                800: '#1e293b', // Slate 800
+                700: '#334155', // Slate 700
+                accent: '#f59e0b', // Amber 500 (Safety Orange/Gold)
+                accentHover: '#d97706',
+                metal: '#94a3b8', // Slate 400
+              }
+            },
+            backgroundImage: {
+              'metal-gradient': 'radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 70%)',
+              'grid-pattern': 'linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0f172a;
+        /* Industrial Texture: A mix of radial lighting and subtle grid lines */
+        background-image: 
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 80%);
+        background-size: 40px 40px, 40px 40px, 100% 100%;
+        background-attachment: fixed;
+        color: #f8fafc;
+      }
+      /* Custom Scrollbar for Industrial Feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155; 
+        border-radius: 4px;
+        border: 1px solid #1e293b;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #f59e0b; 
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "@emailjs/browser": "https://esm.sh/@emailjs/browser@^4.3.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <!-- FIX: Use relative path ./index.tsx to ensure Vite finds the file in the root directory -->
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
