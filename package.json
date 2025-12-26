@@ -1,7 +1,7 @@
 {
   "name": "bosheng-lift-website",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1",
-    "@emailjs/browser": "^4.3.0"
+    "@emailjs/browser": "^4.4.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.1",
