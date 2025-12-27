@@ -137,11 +137,18 @@ const Home: React.FC = () => {
              {HERO_SLIDES[currentSlide].subtitle}
           </p>
           
+          {/* Button Group: Optimized sizing for visual balance across devices */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full max-w-md mx-auto sm:max-w-none px-4">
-            <Link to="/contact#online-message" className="bg-industrial-accent text-white px-8 py-3.5 md:px-10 md:py-4 rounded-lg font-bold text-sm md:text-lg hover:bg-industrial-accentHover transition-all shadow-lg shadow-orange-500/20 hover:-translate-y-1 flex items-center justify-center gap-2">
+            <Link 
+              to="/contact#online-message" 
+              className="bg-industrial-accent text-white px-6 py-3 sm:px-8 sm:py-3.5 md:px-10 md:py-4 rounded-lg font-bold text-sm sm:text-base md:text-lg hover:bg-industrial-accentHover transition-all shadow-lg shadow-orange-500/20 hover:-translate-y-1 flex items-center justify-center gap-2"
+            >
               立即咨询 <Icons.ArrowRight size={20} />
             </Link>
-            <Link to="/services" className="bg-white/5 border border-white/20 text-white px-8 py-3.5 md:px-10 md:py-4 rounded-lg font-bold text-sm md:text-lg hover:bg-white hover:text-industrial-900 transition-all backdrop-blur-sm hover:-translate-y-1">
+            <Link 
+              to="/services" 
+              className="bg-white/5 border border-white/20 text-white px-6 py-3 sm:px-8 sm:py-3.5 md:px-10 md:py-4 rounded-lg font-bold text-sm sm:text-base md:text-lg hover:bg-white hover:text-industrial-900 transition-all backdrop-blur-sm hover:-translate-y-1 flex items-center justify-center"
+            >
               了解服务
             </Link>
           </div>

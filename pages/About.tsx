@@ -77,7 +77,8 @@ const About: React.FC = () => {
                 <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4 md:mb-6">
                   关于博升
                 </h1>
-                <h2 className="text-xl md:text-3xl text-gray-200 font-light tracking-wide border-l-4 border-industrial-accent pl-4 md:pl-6 py-2">
+                {/* Updated: Added whitespace-nowrap to prevent wrapping on mobile */}
+                <h2 className="text-lg sm:text-xl md:text-3xl text-gray-200 font-light tracking-wide border-l-4 border-industrial-accent pl-4 md:pl-6 py-2 whitespace-nowrap overflow-x-visible">
                   您的安全，就是我们的使命！
                 </h2>
               </div>
