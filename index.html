@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -57,13 +58,13 @@
     
     <!-- Using Tailwind CDN for quick styling as per current setup -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'Noto Sans SC', 'sans-serif'],
+              sans: ['Inter', 'Noto Sans SC', 'system-ui', 'sans-serif'],
             },
             colors: {
               industrial: {
@@ -78,6 +79,14 @@
             backgroundImage: {
               'metal-gradient': 'radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 70%)',
               'grid-pattern': 'linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)'
+            },
+            letterSpacing: {
+              'tighter': '-0.05em',
+              'tight': '-0.025em',
+              'normal': '0em',
+              'wide': '0.025em',
+              'wider': '0.05em',
+              'widest': '0.1em',
             }
           }
         }
@@ -94,21 +103,24 @@
         background-size: 40px 40px, 40px 40px, 100% 100%;
         background-attachment: fixed;
         color: #f8fafc;
+        /* Typography Polish */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
       }
-      /* Custom Scrollbar for Industrial Feel */
+      /* Custom Scrollbar for Industrial Feel - Thinner and cleaner */
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 6px;
       }
       ::-webkit-scrollbar-track {
         background: #0f172a; 
       }
       ::-webkit-scrollbar-thumb {
         background: #334155; 
-        border-radius: 4px;
-        border: 1px solid #1e293b;
+        border-radius: 999px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #f59e0b; 
+        background: #475569; 
       }
     </style>
 <script type="importmap">
@@ -125,10 +137,12 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>
     <!-- FIX: Use relative path ./index.tsx to ensure Vite finds the file in the root directory -->
     <script type="module" src="./index.tsx"></script>
-  </body>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>

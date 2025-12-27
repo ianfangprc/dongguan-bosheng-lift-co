@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ADDRESS } from '../constants';
 import { Icons } from './Icon';
@@ -10,19 +11,44 @@ const MapAddress: React.FC<MapAddressProps> = ({ className }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openMap = (type: 'gaode' | 'baidu') => {
-    // Encode the address for URL safety
-    const query = encodeURIComponent(ADDRESS);
-    let url = '';
+    // Detect mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
-    if (type === 'gaode') {
-      // Amap (High German Map) Search URL
-      url = `https://www.amap.com/search?query=${query}`;
+    // Address for query
+    const encodedAddress = encodeURIComponent(ADDRESS);
+    // "My Location" for Desktop origin hint
+    const startPointText = encodeURIComponent("我的位置");
+
+    if (isMobile) {
+      // --- Mobile: Open Native App Scheme for Route Planning ---
+      // Note: By omitting the start point (sname/slat/slon), the apps default to "Current Location"
+      
+      if (type === 'gaode') {
+        // Amap (Gaode) App URI for Route Planning (Driving)
+        // t=0 (Driving), dev=0 (No offset)
+        window.location.href = `amapuri://route/plan/?sourceApplication=BoshengLift&dname=${encodedAddress}&dev=0&t=0`;
+      } else {
+        // Baidu Map App URI for Route Planning (Driving)
+        // mode=driving
+        window.location.href = `baidumap://map/direction?destination=${encodedAddress}&mode=driving&src=BoshengLift`;
+      }
     } else {
-      // Baidu Map Search URL
-      url = `https://map.baidu.com/search/${query}`;
+      // --- Desktop: Open Web Version Route Planning ---
+      
+      let url = '';
+      if (type === 'gaode') {
+        // Amap Web Route Planning
+        // Using 'from[name]=我的位置' to hint the map to use current location (browser permission required)
+        url = `https://www.amap.com/dir?from[name]=${startPointText}&to[name]=${encodedAddress}&type=car`;
+      } else {
+        // Baidu Map Web Route Planning
+        // Using https to prevent mixed content issues
+        // origin=我的位置 triggers the geolocation logic or defaults to user input
+        url = `https://api.map.baidu.com/direction?origin=${startPointText}&destination=${encodedAddress}&mode=driving&region=东莞&output=html&src=BoshengLift`;
+      }
+      window.open(url, '_blank');
     }
     
-    window.open(url, '_blank');
     setIsOpen(false);
   };
 

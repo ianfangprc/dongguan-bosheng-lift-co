@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { PROJECTS } from '../constants';
+import { PROJECTS, BROCHURE_LINK } from '../constants';
 import { IMAGES } from '../images';
 import { Icons } from '../components/Icon';
 import SEO from '../components/SEO';
@@ -31,9 +31,26 @@ const Projects: React.FC = () => {
             工程案例
           </h1>
           <div className="w-20 h-1.5 bg-industrial-accent mx-auto mb-8 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.5)]"></div>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md">
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md mb-10">
             见证品质，铸就经典。我们在东莞及周边地区拥有丰富的项目经验。
           </p>
+          
+          {/* Download Brochure Button */}
+          <div>
+            <a 
+              href={BROCHURE_LINK} 
+              download="博升电梯-公司宣传画册.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-industrial-accent hover:bg-industrial-accentHover text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-1 group"
+            >
+              <Icons.Download size={24} className="group-hover:animate-bounce" />
+              <span>下载公司画册</span>
+            </a>
+            <p className="text-gray-400 text-xs mt-3 opacity-80">
+              * 文件格式: PDF / 点击直接下载
+            </p>
+          </div>
         </div>
       </div>
 

@@ -10,6 +10,42 @@ import { IMAGES } from './images';
 //    如需修改图片，请前往 images.ts 修改对应的链接。
 // ==============================================================================
 
+// ==============================================================================
+// 🎬 宣传视频配置 (Video Configuration)
+// ==============================================================================
+// 
+// [给零基础人员的操作指南]:
+// 网站计划部署在 Flarepage (静态托管)，为了保证网站打开速度，强烈建议：
+// 
+// 方案 A (推荐 - 最佳性能): 
+//   将视频上传到优酷、Bilibili、阿里云 OSS 或腾讯云 COS。
+//   获取视频的直连地址 (.mp4 结尾) 填入下方的链接中。
+//
+// 方案 B (本地文件 - 仅限小视频):
+//   1. 将 .mp4 视频文件(建议小于 20MB) 放入项目根目录的 'public/assets/video/' 文件夹中。
+//      (如果没有 video 文件夹，请新建一个)
+//   2. 将文件名改为 'promo.mp4'。
+//   3. 将下方的链接修改为: '/assets/video/promo.mp4'
+// 
+// 注意：如果视频文件过大，会导致网站打开非常慢，甚至在部署时报错。
+// ==============================================================================
+
+// 这里使用一个演示用的 MP4 链接。请替换为您公司的真实视频链接。
+// export const COMPANY_VIDEO = "https://cdn.coverr.co/videos/coverr-elevator-going-down-2651/1080p.mp4"; 
+// 如果您按照方案 B 操作，请取消下面这行的注释，并注释掉上面那行：
+export const COMPANY_VIDEO = "/assets/video/promo.mp4";
+
+// ==============================================================================
+// 📄 下载中心配置 (Downloads Configuration)
+// ==============================================================================
+// [操作指南]:
+// 1. 请准备好您的公司宣传册 PDF 文件。
+// 2. 将文件重命名为 'brochure.pdf'。
+// 3. 将文件放入项目根目录的 'public/assets/' 文件夹中。
+//    (最终路径应为: public/assets/brochure.pdf)
+// ==============================================================================
+export const BROCHURE_LINK = "/assets/brochure.pdf";
+
 export const COMPANY_NAME = "东莞博升电梯有限公司";
 export const COMPANY_NAME_EN = "Dongguan Bosheng Lift Co., Ltd";
 export const COMPANY_TAGLINE = "您的安全，就是我们的使命！";
@@ -52,7 +88,7 @@ export const HERO_SLIDES = [
     id: 3,
     image: IMAGES.HERO_SLIDE_3,
     alt: 'Circuit Board Repair',
-    title: '打造广东专业度第一的电梯维保商',
+    title: '打造广东省专业度第一维保商',
     subtitle: '专业电梯电路板维修'
   },
   {
@@ -60,7 +96,7 @@ export const HERO_SLIDES = [
     image: IMAGES.HERO_SLIDE_4,
     alt: 'Technical Training',
     title: '电梯行业人才摇篮 成就梦想',
-    subtitle: '校企合作电梯技术培训'
+    subtitle: '校企合作 电梯技术培训'
   },
   {
     id: 5,
@@ -76,7 +112,8 @@ export const HERO_SLIDES = [
 // ==============================================================================
 export const ABOUT_IMAGES = {
   heroBackground: IMAGES.BG_ABOUT,
-  introFeature: IMAGES.ABOUT_TECHNICIAN
+  introFeature: IMAGES.ABOUT_TECHNICIAN,
+  videoPoster: IMAGES.VIDEO_POSTER // 新增视频封面
 };
 
 // ==============================================================================
@@ -166,20 +203,6 @@ export const PROJECTS: ProjectItem[] = [
     location: '东莞·塘厦',
     imageUrl: IMAGES.PROJECT_6,
     category: '旧梯改造'
-  },
-  {
-    id: 'p7',
-    title: '南城海雅百货',
-    location: '东莞·南城',
-    imageUrl: IMAGES.PROJECT_7,
-    category: '商业维保'
-  },
-  {
-    id: 'p8',
-    title: '常平汇嘉百货商场',
-    location: '东莞·常平',
-    imageUrl: IMAGES.PROJECT_8,
-    category: '安装调试'
   }
 ];
 

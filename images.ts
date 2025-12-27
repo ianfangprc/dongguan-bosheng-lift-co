@@ -16,8 +16,8 @@ export const IMAGES = {
   // 品牌与通用 (Brand & Common)
   // 建议路径: /assets/common/
   // ----------------------------------------------------------------------------
-  QR_WECHAT:  '/assets/common/qr_wechat.jpg', // 建议本地化: '/assets/common/qr_wechat.jpg'
-  QR_DOUYIN:  '/assets/common/qr_douyin.jpg', // 建议本地化: '/assets/common/qr_douyin.jpg'
+  QR_WECHAT: '/assets/common/qr_wechat.jpg', // 建议本地化: '/assets/common/qr_wechat.jpg'
+  QR_DOUYIN: '/assets/common/qr_douyin.jpg',  // 建议本地化: '/assets/common/qr_douyin.jpg'
 
   // ----------------------------------------------------------------------------
   // 首页轮播图 (Home Hero Slides)
@@ -45,12 +45,17 @@ export const IMAGES = {
   // ----------------------------------------------------------------------------
   ABOUT_TECHNICIAN: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
   
+  // [新增] 公司宣传视频封面图
+  // 建议本地化: '/assets/about/video_cover.jpg'
+  // 作用: 视频加载前显示的图片，建议使用视频的第一帧或精心设计的封面，尺寸建议 1920x1080
+  VIDEO_POSTER: '/assets/about/video_cover.jpg',
+  
   // 资质证书 (Certificates)
   // 建议路径: /assets/certificates/
-  CERT_LICENSE:      '/assets/certificates/yyzz.jpg',// 营业执照占位
-  CERT_PRODUCTION:   '/assets/certificates/scxk.jpg', // 生产许可证占位
-  CERT_CONTROL:      '/assets/certificates/xssy.jpg', // 型式试验占位
-  CERT_INSPECTOR:    '/assets/certificates/jyy.jpg', // 检验员证占位
+  CERT_LICENSE:    '/assets/certificates/yyzz.jpg', // 营业执照占位
+  CERT_PRODUCTION: '/assets/certificates/scxk.jpg', // 生产许可证占位
+  CERT_CONTROL:    '/assets/certificates/xssy.jpg', // 型式试验占位
+  CERT_INSPECTOR:  '/assets/certificates/jyy.jpg', // 检验员证占位
 
   // ----------------------------------------------------------------------------
   // 核心业务/整梯销售 (Services / Sales Categories)
@@ -71,8 +76,6 @@ export const IMAGES = {
   PROJECT_4: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
   PROJECT_5: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
   PROJECT_6: 'https://images.unsplash.com/photo-1605283176568-9b41fde3672e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-  PROJECT_7: 'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=800&q=80',
-  PROJECT_8: 'https://images.unsplash.com/photo-1555636222-cae831e670b3?auto=format&fit=crop&w=800&q=80',
 
   // ----------------------------------------------------------------------------
   // 新闻资讯 (News)

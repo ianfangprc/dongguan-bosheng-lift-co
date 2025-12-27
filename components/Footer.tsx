@@ -23,38 +23,38 @@ const Footer: React.FC = () => {
 
   // Full Footer for Home page
   return (
-    <footer className="bg-industrial-900/95 border-t border-industrial-700 pt-20 pb-10 text-gray-300 backdrop-blur-md">
+    <footer className="bg-industrial-900/95 border-t border-industrial-700 pt-16 md:pt-20 pb-8 md:pb-10 text-gray-300 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Main Grid Layout - Adjusted for better spacing and balance */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           
           {/* Column 1: Brand Info (Spans 5 columns) */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-6">
              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 text-industrial-accent">
+                <div className="w-10 h-10 md:w-12 md:h-12 text-industrial-accent">
                   <Logo className="w-full h-full" />
                 </div>
                 <div>
-                  <h2 className="text-white font-bold text-xl tracking-wide">{COMPANY_NAME}</h2>
-                  <p className="text-xs text-industrial-metal tracking-wider">Dongguan Bosheng Lift Co., Ltd</p>
+                  <h2 className="text-white font-bold text-lg md:text-xl tracking-wide leading-none mb-1">{COMPANY_NAME}</h2>
+                  <p className="text-[10px] md:text-xs text-industrial-metal tracking-wider font-medium">Dongguan Bosheng Lift Co., Ltd</p>
                 </div>
              </div>
              <p className="text-sm text-gray-400 leading-relaxed max-w-md text-justify">
                公司坐落于广东省东莞市东城街道，是一家集电梯控制系统研发、电梯销售、电梯维保、旧梯改造更新及技术培训于一体的综合性电梯企业。
              </p>
-             <Link to="/about" className="group inline-flex items-center gap-2 text-sm font-bold text-industrial-accent border border-industrial-accent/30 bg-industrial-accent/5 px-5 py-2.5 rounded hover:bg-industrial-accent hover:text-white hover:border-industrial-accent transition-all duration-300">
-                了解更多 <Icons.ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+             <Link to="/about" className="group inline-flex items-center gap-2 text-xs md:text-sm font-bold text-industrial-accent border border-industrial-accent/30 bg-industrial-accent/5 px-4 py-2 md:px-5 md:py-2.5 rounded hover:bg-industrial-accent hover:text-white hover:border-industrial-accent transition-all duration-300">
+                了解更多 <Icons.ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
              </Link>
           </div>
 
           {/* Column 2: Navigation (Spans 3 columns) */}
           <div className="lg:col-span-3 lg:pl-8">
-            <h3 className="text-white font-bold text-lg mb-6 relative inline-block">
+            <h3 className="text-white font-bold text-base md:text-lg mb-4 md:mb-6 relative inline-block">
               快速导航
               <span className="absolute -bottom-2 left-0 w-8 h-1 bg-industrial-accent rounded-full"></span>
             </h3>
-            <ul className="space-y-4 text-sm">
+            <ul className="space-y-3 md:space-y-4 text-sm">
               <li><Link to="/" className="group flex items-center gap-2 hover:text-white transition-colors"><span className="w-1.5 h-1.5 rounded-full bg-industrial-700 group-hover:bg-industrial-accent transition-colors"></span> 网站首页</Link></li>
               <li><Link to="/services" className="group flex items-center gap-2 hover:text-white transition-colors"><span className="w-1.5 h-1.5 rounded-full bg-industrial-700 group-hover:bg-industrial-accent transition-colors"></span> 核心业务体系</Link></li>
               <li><Link to="/projects" className="group flex items-center gap-2 hover:text-white transition-colors"><span className="w-1.5 h-1.5 rounded-full bg-industrial-700 group-hover:bg-industrial-accent transition-colors"></span> 精选工程案例</Link></li>
@@ -64,29 +64,33 @@ const Footer: React.FC = () => {
 
           {/* Column 3: Contact & Social (Spans 4 columns) */}
           <div className="lg:col-span-4">
-            <h3 className="text-white font-bold text-lg mb-6 relative inline-block">
-              联系方式
-              <span className="absolute -bottom-2 left-0 w-8 h-1 bg-industrial-accent rounded-full"></span>
+            <h3 className="text-white font-bold text-base md:text-lg mb-4 md:mb-6 relative inline-block group cursor-pointer">
+              <Link to="/contact" className="group-hover:text-industrial-accent transition-colors">
+                联系方式
+              </Link>
+              <span className="absolute -bottom-2 left-0 w-8 h-1 bg-industrial-accent rounded-full group-hover:w-full transition-all duration-300"></span>
             </h3>
-            <ul className="space-y-5 text-sm mb-8">
+            <ul className="space-y-4 md:space-y-5 text-sm mb-6 md:mb-8">
               <li className="flex items-start gap-3 group">
-                <div className="p-2 bg-industrial-800 rounded text-industrial-accent group-hover:text-white group-hover:bg-industrial-accent transition-colors shrink-0">
-                  <Icons.MapPin size={18} />
+                <div className="p-1.5 md:p-2 bg-industrial-800 rounded text-industrial-accent group-hover:text-white group-hover:bg-industrial-accent transition-colors shrink-0">
+                  <Icons.MapPin size={16} className="md:w-[18px] md:h-[18px]" />
                 </div>
                 {/* Use MapAddress component here */}
-                <div className="mt-1 leading-relaxed text-gray-400 group-hover:text-gray-300 transition-colors">
+                <div className="mt-0.5 leading-relaxed text-gray-400 group-hover:text-gray-300 transition-colors">
                    <MapAddress />
                 </div>
               </li>
               <li className="flex items-center gap-3 group">
-                <div className="p-2 bg-industrial-800 rounded text-industrial-accent group-hover:text-white group-hover:bg-industrial-accent transition-colors shrink-0">
-                  <Icons.Phone size={18} />
+                <div className="p-1.5 md:p-2 bg-industrial-800 rounded text-industrial-accent group-hover:text-white group-hover:bg-industrial-accent transition-colors shrink-0">
+                  <Icons.Phone size={16} className="md:w-[18px] md:h-[18px]" />
                 </div>
-                <span className="font-bold text-lg text-white font-mono tracking-wide">{PHONE_NUMBER}</span>
+                <a href={`tel:${PHONE_NUMBER}`} className="font-bold text-base md:text-lg text-white font-mono tracking-wide hover:text-industrial-accent transition-colors">
+                  {PHONE_NUMBER}
+                </a>
               </li>
               <li className="flex items-center gap-3 group">
-                <div className="p-2 bg-industrial-800 rounded text-industrial-accent group-hover:text-white group-hover:bg-industrial-accent transition-colors shrink-0">
-                  <Icons.Mail size={18} />
+                <div className="p-1.5 md:p-2 bg-industrial-800 rounded text-industrial-accent group-hover:text-white group-hover:bg-industrial-accent transition-colors shrink-0">
+                  <Icons.Mail size={16} className="md:w-[18px] md:h-[18px]" />
                 </div>
                 <span className="text-gray-400 group-hover:text-gray-300 transition-colors">{EMAIL}</span>
               </li>
@@ -126,9 +130,9 @@ const Footer: React.FC = () => {
         </div>
         
         {/* Copyright Bar */}
-        <div className="border-t border-industrial-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+        <div className="border-t border-industrial-800 mt-12 md:mt-16 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
           <p>&copy; {new Date().getFullYear()} {COMPANY_NAME} 版权所有. 保留所有权利.</p>
-          <div className="flex gap-6">
+          <div className="flex gap-4 md:gap-6">
             <span className="hover:text-industrial-accent cursor-pointer transition-colors">隐私政策</span>
             <span className="hover:text-industrial-accent cursor-pointer transition-colors">服务条款</span>
             <span className="hover:text-industrial-accent cursor-pointer transition-colors">网站地图</span>
