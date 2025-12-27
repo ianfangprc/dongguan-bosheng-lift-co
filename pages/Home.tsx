@@ -7,6 +7,13 @@ import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  
+  // Touch state for swipe detection
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  
+  // Minimum distance to be considered a swipe
+  const minSwipeDistance = 50;
 
   // Auto-rotate slides
   useEffect(() => {
@@ -24,6 +31,31 @@ const Home: React.FC = () => {
     setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
   };
 
+  // Touch Event Handlers
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null); // Reset touch end
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    }
+    if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <SEO 
@@ -35,7 +67,12 @@ const Home: React.FC = () => {
       {/* ====================================================================================
           HERO SECTION
       ==================================================================================== */}
-      <section className="relative h-[650px] md:h-[750px] flex items-center justify-center overflow-hidden bg-industrial-900 group">
+      <section 
+        className="relative h-[650px] md:h-[750px] flex items-center justify-center overflow-hidden bg-industrial-900 group"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
         
         {/* Carousel Images */}
         {HERO_SLIDES.map((slide, index) => (
@@ -56,19 +93,19 @@ const Home: React.FC = () => {
           </div>
         ))}
 
-        {/* Navigation Arrows - Adjusted positioning for mobile */}
+        {/* Navigation Arrows - Hidden on mobile as we now have swipe, visible on desktop */}
         <button 
           onClick={prevSlide}
-          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-white/5 hover:bg-industrial-accent text-white rounded-full transition-all duration-300 backdrop-blur-md border border-white/10 opacity-0 group-hover:opacity-100 hover:scale-110"
+          className="hidden md:block absolute left-8 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/5 hover:bg-industrial-accent text-white rounded-full transition-all duration-300 backdrop-blur-md border border-white/10 opacity-0 group-hover:opacity-100 hover:scale-110"
         >
-          <Icons.ChevronLeft size={24} className="md:w-8 md:h-8" />
+          <Icons.ChevronLeft size={32} />
         </button>
 
         <button 
           onClick={nextSlide}
-          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 bg-white/5 hover:bg-industrial-accent text-white rounded-full transition-all duration-300 backdrop-blur-md border border-white/10 opacity-0 group-hover:opacity-100 hover:scale-110"
+          className="hidden md:block absolute right-8 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/5 hover:bg-industrial-accent text-white rounded-full transition-all duration-300 backdrop-blur-md border border-white/10 opacity-0 group-hover:opacity-100 hover:scale-110"
         >
-          <Icons.ChevronRight size={24} className="md:w-8 md:h-8" />
+          <Icons.ChevronRight size={32} />
         </button>
 
         {/* Indicators */}
@@ -84,21 +121,27 @@ const Home: React.FC = () => {
           ))}
         </div>
 
-        {/* Hero Content - Optimized Typography */}
-        <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto mt-[-40px]">
-          <h1 className={`text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-6 md:mb-8 leading-tight drop-shadow-2xl transition-all duration-500`}>
+        {/* Hero Content - Optimized Typography for Single Line on Mobile */}
+        <div className="relative z-10 text-center px-4 md:px-6 max-w-full mx-auto mt-[-40px] w-full">
+          {/* 
+             Updated Classes:
+             - whitespace-nowrap: Forces single line
+             - text-lg / text-xl: Smaller base size for mobile
+             - md:text-5xl: Larger size for desktop
+          */}
+          <h1 className={`text-lg sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 md:mb-8 leading-tight drop-shadow-2xl transition-all duration-500 whitespace-nowrap overflow-hidden text-ellipsis px-2`}>
             {HERO_SLIDES[currentSlide].title}
           </h1>
           
-          <p className="text-base sm:text-lg md:text-2xl text-gray-200 mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed font-light drop-shadow-lg min-h-[3.5rem] px-2">
+          <p className="text-sm sm:text-base md:text-2xl text-gray-200 mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed font-light drop-shadow-lg min-h-[3rem] px-4 line-clamp-2 md:line-clamp-none">
              {HERO_SLIDES[currentSlide].subtitle}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full max-w-md mx-auto sm:max-w-none">
-            <Link to="/contact#online-message" className="bg-industrial-accent text-white px-8 py-3.5 md:px-10 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-industrial-accentHover transition-all shadow-lg shadow-orange-500/20 hover:-translate-y-1 flex items-center justify-center gap-2">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full max-w-md mx-auto sm:max-w-none px-4">
+            <Link to="/contact#online-message" className="bg-industrial-accent text-white px-8 py-3.5 md:px-10 md:py-4 rounded-lg font-bold text-sm md:text-lg hover:bg-industrial-accentHover transition-all shadow-lg shadow-orange-500/20 hover:-translate-y-1 flex items-center justify-center gap-2">
               立即咨询 <Icons.ArrowRight size={20} />
             </Link>
-            <Link to="/services" className="bg-white/5 border border-white/20 text-white px-8 py-3.5 md:px-10 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-white hover:text-industrial-900 transition-all backdrop-blur-sm hover:-translate-y-1">
+            <Link to="/services" className="bg-white/5 border border-white/20 text-white px-8 py-3.5 md:px-10 md:py-4 rounded-lg font-bold text-sm md:text-lg hover:bg-white hover:text-industrial-900 transition-all backdrop-blur-sm hover:-translate-y-1">
               了解服务
             </Link>
           </div>
