@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { SERVICES, PHONE_NUMBER } from '../constants';
 import { IMAGES } from '../images';
@@ -46,12 +45,40 @@ const Services: React.FC = () => {
     '各类国产系统'
   ];
 
+  // Service Schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Elevator Maintenance and Installation",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "东莞博升电梯有限公司"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Dongguan"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Elevator Services",
+      "itemListElement": SERVICES.map(s => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": s.title
+        }
+      }))
+    }
+  };
+
   return (
     <div className="pt-20 min-h-screen bg-industrial-900 text-slate-50 font-sans selection:bg-industrial-accent selection:text-white">
       <SEO 
         title="核心业务 - 维修/保养/销售/改造" 
         description="博升电梯提供全方位的电梯服务体系：包括定期巡检、隐患排查、老旧梯更新改造、整梯销售及技术培训。严格执行国标规范，确保每一台电梯安全运行。"
         keywords={['电梯年检', '电梯大修', '旧梯更新', '老房加装电梯', '电梯技术培训', '乘客电梯', '载货电梯']}
+        image={window.location.origin + IMAGES.BG_SERVICES}
+        schema={serviceSchema}
       />
 
       {/* ==============================================================================

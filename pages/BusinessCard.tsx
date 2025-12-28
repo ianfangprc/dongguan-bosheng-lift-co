@@ -69,23 +69,24 @@ const BusinessCard: React.FC = () => {
                     <p className="text-[2mm] text-gray-500 uppercase tracking-widest mt-[1.5mm] font-medium">{PERSON.nameEn}</p>
                  </div>
 
-                 {/* Contact Details */}
-                 <div className="space-y-[1.8mm] text-[2mm] text-gray-400 font-light leading-none">
+                 {/* Contact Details - Brightened Colors */}
+                 <div className="space-y-[1.8mm] text-[2mm] text-gray-300 font-light leading-none">
                     <div className="flex items-center gap-3 group">
                         <span className="w-1 h-1 bg-amber-600 rounded-full group-hover:scale-150 transition-transform"></span> 
-                        <span className="font-mono tracking-wide text-gray-300">{PERSON.phone}</span>
+                        <span className="font-mono tracking-wide text-gray-200">{PERSON.phone}</span>
                     </div>
                     <div className="flex items-center gap-3 group">
                         <span className="w-1 h-1 bg-gray-700 rounded-full group-hover:bg-amber-600 transition-colors"></span> 
-                        <span className="font-sans tracking-wide">{PERSON.email}</span>
+                        <span className="font-sans tracking-wide text-gray-200">{PERSON.email}</span>
                     </div>
                     <div className="flex items-center gap-3 group">
                         <span className="w-1 h-1 bg-gray-700 rounded-full group-hover:bg-amber-600 transition-colors"></span> 
-                        <span className="font-sans tracking-wide">{PERSON.website}</span>
+                        <span className="font-sans tracking-wide text-gray-200">{PERSON.website}</span>
                     </div>
                     <div className="flex items-start gap-3 group">
                        <span className="w-1 h-1 bg-gray-700 rounded-full mt-[1.2mm] shrink-0 group-hover:bg-amber-600 transition-colors"></span> 
-                       <span className="w-[38mm] leading-[1.3] opacity-80">{ADDRESS.replace('广东省东莞市', '')}</span>
+                       {/* Full ADDRESS, removed opacity, brightened text */}
+                       <span className="w-[38mm] leading-[1.3] text-gray-200">{ADDRESS}</span>
                     </div>
                  </div>
               </div>
@@ -95,7 +96,8 @@ const BusinessCard: React.FC = () => {
                  {/* Top Right: Logo & Company */}
                  <div className="flex flex-col items-end">
                     <div className="w-[6mm] h-[6mm] text-white/90 mb-[2mm] drop-shadow-md"><Logo /></div>
-                    <div className="text-[1.8mm] font-bold text-gray-500 tracking-wider text-right">{COMPANY_NAME}</div>
+                    {/* Brightened Company Name from gray-500 to gray-300 */}
+                    <div className="text-[1.8mm] font-bold text-gray-300 tracking-wider text-right">{COMPANY_NAME}</div>
                  </div>
 
                  {/* Bottom Right: QR Code */}
@@ -128,7 +130,7 @@ const BusinessCard: React.FC = () => {
            
            {/* Bottom Brand Strip */}
            <div className="absolute bottom-0 w-full h-[8mm] bg-[#121214] flex items-center justify-between px-[6mm] border-t border-white/5">
-              <span className="text-[1.6mm] text-gray-500 tracking-[0.15em] font-medium uppercase">{COMPANY_NAME_EN}</span>
+              <span className="text-[1.6mm] text-gray-500 tracking-[0.15em] font-medium">{COMPANY_NAME_EN}</span>
               <div className="w-[3mm] h-[3mm] text-gray-600 opacity-80"><Logo /></div>
            </div>
         </div>

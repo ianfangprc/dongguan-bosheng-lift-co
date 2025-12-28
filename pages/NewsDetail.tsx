@@ -1,11 +1,12 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Icons } from '../components/Icon';
 import SEO from '../components/SEO';
 import { NewsItem } from '../types';
+import { INDUSTRY_NEWS_DATA, COMPANY_NAME } from '../constants'; // Ensure INDUSTRY_NEWS_DATA is imported
 
-const COMPANY_NEWS_DATA: NewsItem[] = [];
+// Merge local data if needed, but for now using INDUSTRY_NEWS_DATA as the source
+const ALL_NEWS = [...INDUSTRY_NEWS_DATA];
 
 const NewsDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -13,12 +14,11 @@ const NewsDetail: React.FC = () => {
   const [news, setNews] = useState<NewsItem | null>(null);
 
   useEffect(() => {
-    const foundNews = COMPANY_NEWS_DATA.find(n => n.id === id);
+    const foundNews = ALL_NEWS.find(n => n.id === id);
     if (foundNews) {
       setNews(foundNews);
     } else {
-      // If news not found, redirect to news list or show 404
-      // For now, let's just show a not found state
+      // If news not found, redirect handled in UI, but could use navigate('/news', { replace: true }) here
     }
   }, [id]);
 
@@ -33,11 +33,37 @@ const NewsDetail: React.FC = () => {
     );
   }
 
+  // SEO Schema for NewsArticle
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": news.title,
+    "image": news.imageUrl ? [window.location.origin + news.imageUrl] : [],
+    "datePublished": news.date,
+    "dateModified": news.date, // Assuming modified same as published for now
+    "author": [{
+      "@type": "Organization",
+      "name": news.source || COMPANY_NAME
+    }],
+    "publisher": {
+      "@type": "Organization",
+      "name": COMPANY_NAME,
+      "logo": {
+        "@type": "ImageObject",
+        "url": window.location.origin + "/logo.png" // Assuming logo exists at root
+      }
+    },
+    "description": news.summary
+  };
+
   return (
     <div className="pt-24 min-h-screen bg-industrial-900 text-slate-50">
       <SEO 
         title={news.title} 
         description={news.summary}
+        type="article"
+        image={news.imageUrl}
+        schema={articleSchema}
       />
 
       {/* Breadcrumb / Nav */}
@@ -74,7 +100,7 @@ const NewsDetail: React.FC = () => {
           className="prose prose-invert prose-lg max-w-none 
           prose-headings:text-white prose-p:text-gray-300 prose-strong:text-white prose-strong:font-bold
           prose-img:rounded-xl prose-img:shadow-lg prose-a:text-industrial-accent hover:prose-a:text-white"
-          dangerouslySetInnerHTML={{ __html: news.content || '' }}
+          dangerouslySetInnerHTML={{ __html: news.content || news.summary }} // Fallback to summary if content empty
         >
         </div>
 

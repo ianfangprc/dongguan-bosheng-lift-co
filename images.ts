@@ -3,88 +3,80 @@
 // 🖼️ 资源管理中心 (Asset Management Center)
 // ==============================================================================
 // 此文件集中管理全站所有的图片资源链接。
-// 
-// [本地化指南 / Localization Guide]:
-// 1. 在项目根目录的 public 文件夹下新建 'assets' 文件夹。
-// 2. 按照下方各个模块的注释建议，建立子文件夹（如 hero, projects, services 等）。
-// 3. 将您的图片下载并重命名后放入对应文件夹。
-// 4. 将下方的 URL 字符串修改为本地路径 (例如: '/assets/hero/slide1.jpg')。
+// 已完成本地化配置，图片文件位于 public/assets/ 目录下。
 // ==============================================================================
 
 export const IMAGES = {
   // ----------------------------------------------------------------------------
   // 品牌与通用 (Brand & Common)
-  // 建议路径: /assets/common/
+  // 路径: /assets/common/
   // ----------------------------------------------------------------------------
-  QR_WECHAT: '/assets/common/qr_wechat.jpg', // 建议本地化: '/assets/common/qr_wechat.jpg'
-  QR_DOUYIN: '/assets/common/qr_douyin.jpg',  // 建议本地化: '/assets/common/qr_douyin.jpg'
+  // 注意：请将真实的二维码图片放入 public/assets/common/ 文件夹，并命名为 qr_wechat.jpg 和 qr_douyin.jpg
+  QR_WECHAT: "/assets/common/qr_wechat.jpg", 
+  QR_DOUYIN: "/assets/common/qr_douyin.jpg",
 
   // ----------------------------------------------------------------------------
   // 首页轮播图 (Home Hero Slides)
-  // 建议路径: /assets/hero/
+  // 路径: /assets/hero/
   // ----------------------------------------------------------------------------
-  HERO_SLIDE_1: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-  HERO_SLIDE_2: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-  HERO_SLIDE_3: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-  HERO_SLIDE_4: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-  HERO_SLIDE_5: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+  HERO_SLIDE_1: '/assets/hero/slide_1.jpg',
+  HERO_SLIDE_2: '/assets/hero/slide_2.jpg',
+  HERO_SLIDE_3: '/assets/hero/slide_3.jpg',
+  HERO_SLIDE_4: '/assets/hero/slide_4.jpg',
+  HERO_SLIDE_5: '/assets/hero/slide_5.jpg',
 
   // ----------------------------------------------------------------------------
   // 页面顶部背景图 (Page Headers)
-  // 建议路径: /assets/headers/
+  // 路径: /assets/headers/
   // ----------------------------------------------------------------------------
-  BG_SERVICES: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80',
-  BG_PROJECTS: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80',
-  BG_NEWS:     'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80',
-  BG_ABOUT:    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80',
-  BG_CONTACT:  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80',
+  BG_SERVICES: '/assets/headers/services_bg.jpg',
+  BG_PROJECTS: '/assets/headers/projects_bg.jpg',
+  BG_NEWS:     '/assets/headers/news_bg.jpg',
+  BG_ABOUT:    '/assets/headers/about_bg.jpg',
+  BG_CONTACT:  '/assets/headers/contact_bg.jpg',
 
   // ----------------------------------------------------------------------------
   // 关于我们页面配图 (About Page)
-  // 建议路径: /assets/about/
+  // 路径: /assets/about/
   // ----------------------------------------------------------------------------
-  ABOUT_TECHNICIAN: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
-  
-  // [新增] 公司宣传视频封面图
-  // 建议本地化: '/assets/about/video_cover.jpg'
-  // 作用: 视频加载前显示的图片，建议使用视频的第一帧或精心设计的封面，尺寸建议 1920x1080
-  VIDEO_POSTER: '/assets/about/video_cover.jpg',
+  ABOUT_TECHNICIAN: '/assets/about/technician.jpg',
+  VIDEO_POSTER:     '/assets/about/video_poster.jpg',
   
   // 资质证书 (Certificates)
-  // 建议路径: /assets/certificates/
-  CERT_LICENSE:    '/assets/certificates/yyzz.jpg', // 营业执照占位
-  CERT_PRODUCTION: '/assets/certificates/scxk.jpg', // 生产许可证占位
-  CERT_CONTROL:    '/assets/certificates/xssy.jpg', // 型式试验占位
-  CERT_INSPECTOR:  '/assets/certificates/jyy.jpg', // 检验员证占位
+  // 路径: /assets/certificates/
+  CERT_LICENSE:    '/assets/certificates/license.jpg', 
+  CERT_PRODUCTION: '/assets/certificates/production.jpg',
+  CERT_CONTROL:    '/assets/certificates/control.jpg',
+  CERT_INSPECTOR:  '/assets/certificates/inspector.jpg',
 
   // ----------------------------------------------------------------------------
   // 核心业务/整梯销售 (Services / Sales Categories)
-  // 建议路径: /assets/services/
+  // 路径: /assets/services/
   // ----------------------------------------------------------------------------
-  SALES_PASSENGER: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800',
-  SALES_CARGO:     'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800',
-  SALES_ESCALATOR: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800',
-  SALES_LIFT:      'https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&q=80&w=800',
+  SALES_PASSENGER: '/assets/services/passenger.jpg',
+  SALES_CARGO:     '/assets/services/cargo.jpg',
+  SALES_ESCALATOR: '/assets/services/escalator.jpg',
+  SALES_LIFT:      '/assets/services/lift.jpg',
 
   // ----------------------------------------------------------------------------
   // 工程案例 (Projects)
-  // 建议路径: /assets/projects/
+  // 路径: /assets/projects/
   // ----------------------------------------------------------------------------
-  PROJECT_1: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-  PROJECT_2: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-  PROJECT_3: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-  PROJECT_4: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-  PROJECT_5: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-  PROJECT_6: 'https://images.unsplash.com/photo-1605283176568-9b41fde3672e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+  PROJECT_1: '/assets/projects/p1.jpg',
+  PROJECT_2: '/assets/projects/p2.jpg',
+  PROJECT_3: '/assets/projects/p3.jpg',
+  PROJECT_4: '/assets/projects/p4.jpg',
+  PROJECT_5: '/assets/projects/p5.jpg',
+  PROJECT_6: '/assets/projects/p6.jpg',
 
   // ----------------------------------------------------------------------------
   // 新闻资讯 (News)
-  // 建议路径: /assets/news/
+  // 路径: /assets/news/
   // ----------------------------------------------------------------------------
-  NEWS_1: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80',
-  NEWS_2: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80',
-  NEWS_3: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80',
-  NEWS_4: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80',
-  NEWS_5: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80',
-  NEWS_6: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80',
+  NEWS_1: '/assets/news/n1.jpg',
+  NEWS_2: '/assets/news/n2.jpg',
+  NEWS_3: '/assets/news/n3.jpg',
+  NEWS_4: '/assets/news/n4.jpg',
+  NEWS_5: '/assets/news/n5.jpg',
+  NEWS_6: '/assets/news/n6.jpg',
 };

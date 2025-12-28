@@ -1,6 +1,5 @@
-
 import React, { Suspense, lazy } from 'react';
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FloatingCTA from './components/FloatingCTA';
@@ -12,7 +11,7 @@ const Home = lazy(() => import('./pages/Home'));
 const Services = lazy(() => import('./pages/Services'));
 const Projects = lazy(() => import('./pages/Projects'));
 const News = lazy(() => import('./pages/News')); 
-const NewsDetail = lazy(() => import('./pages/NewsDetail')); // Added NewsDetail import if it was missing or implied
+const NewsDetail = lazy(() => import('./pages/NewsDetail')); 
 const Contact = lazy(() => import('./pages/Contact'));
 const About = lazy(() => import('./pages/About'));
 // Internal Tool
@@ -20,7 +19,7 @@ const BusinessCard = lazy(() => import('./pages/BusinessCard'));
 
 // Simple loading spinner
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center">
+  <div className="min-h-screen flex items-center justify-center bg-industrial-900">
     <div className="flex flex-col items-center gap-4">
       <Icons.Loader2 className="animate-spin text-industrial-accent w-12 h-12" />
       <span className="text-white font-bold tracking-widest">LOADING...</span>
@@ -30,7 +29,8 @@ const PageLoader = () => (
 
 const App: React.FC = () => {
   return (
-    <HashRouter>
+    // SEO OPTIMIZATION: Switched to BrowserRouter for clean URLs (e.g., /services instead of /#/services)
+    <BrowserRouter>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen text-slate-50 font-sans selection:bg-industrial-accent selection:text-white">
         {/* Navbar is rendered on all pages except Business Card for clean printing */}
@@ -51,6 +51,7 @@ const App: React.FC = () => {
               <Route path="/about" element={<About />} />
               {/* Internal Route for Business Card Generation */}
               <Route path="/business-card" element={<BusinessCard />} />
+              {/* 404 Handling: Redirect to Home for now, but in a large app a 404 page is better */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>
@@ -62,7 +63,7 @@ const App: React.FC = () => {
            <Route path="*" element={<><Footer /><FloatingCTA /></>} />
         </Routes>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

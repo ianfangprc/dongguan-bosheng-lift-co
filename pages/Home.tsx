@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { SERVICES, PROJECTS, HERO_SLIDES } from '../constants';
+import { SERVICES, PROJECTS, HERO_SLIDES, COMPANY_NAME, ADDRESS, PHONE_NUMBER } from '../constants';
 import { Icons, DynamicIcon } from '../components/Icon';
 import SEO from '../components/SEO';
 
@@ -56,12 +55,31 @@ const Home: React.FC = () => {
     }
   };
 
+  // SEO Schema for Local Business
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": COMPANY_NAME,
+    "image": window.location.origin + HERO_SLIDES[0].image,
+    "telephone": PHONE_NUMBER,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": ADDRESS,
+      "addressLocality": "东莞市",
+      "addressRegion": "广东省",
+      "addressCountry": "CN"
+    },
+    "url": window.location.href,
+    "priceRange": "$$"
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <SEO 
         title="首页 - 专业电梯维保与销售" 
         description="东莞博升电梯提供专业的电梯维修、保养、销售及安装服务。我们拥有资深技术团队，提供24小时紧急救援，是您值得信赖的垂直交通管家。"
         keywords={['电梯维修', '电梯保养', '整梯销售', '电梯安装', '东莞电梯公司']}
+        schema={homeSchema}
       />
       
       {/* ====================================================================================
