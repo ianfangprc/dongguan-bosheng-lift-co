@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /business-card
+
+Sitemap: https://www.boshenglift.com/sitemap.xml

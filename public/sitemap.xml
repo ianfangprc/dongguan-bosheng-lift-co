@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 首页 -->
+  <url>
+    <loc>https://www.boshenglift.com/</loc>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 核心业务 -->
+  <url>
+    <loc>https://www.boshenglift.com/services</loc>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 工程案例 -->
+  <url>
+    <loc>https://www.boshenglift.com/projects</loc>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 行业资讯列表 -->
+  <url>
+    <loc>https://www.boshenglift.com/news</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 关于我们 -->
+  <url>
+    <loc>https://www.boshenglift.com/about</loc>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 联系我们 -->
+  <url>
+    <loc>https://www.boshenglift.com/contact</loc>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 具体新闻文章 (根据 constants.tsx 数据) -->
+  <url>
+    <loc>https://www.boshenglift.com/news/ind-1</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.boshenglift.com/news/ind-2</loc>
+    <lastmod>2024-12-28</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.boshenglift.com/news/ind-3</loc>
+    <lastmod>2024-11-10</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.boshenglift.com/news/ind-4</loc>
+    <lastmod>2024-10-22</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.boshenglift.com/news/ind-5</loc>
+    <lastmod>2024-09-15</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.boshenglift.com/news/ind-6</loc>
+    <lastmod>2024-08-30</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
