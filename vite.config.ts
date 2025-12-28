@@ -13,7 +13,5 @@ export default defineConfig({
   server: {
     port: 5173,
     strictPort: false,
-    // Add history fallback for local development
-    historyApiFallback: true,
   }
 })
