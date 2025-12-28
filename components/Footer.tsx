@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { COMPANY_NAME, PHONE_NUMBER, EMAIL, WECHAT_QR_IMAGE, DOUYIN_QR_IMAGE } from '../constants';
@@ -135,7 +134,7 @@ const Footer: React.FC = () => {
           <div className="flex gap-4 md:gap-6">
             <span className="hover:text-industrial-accent cursor-pointer transition-colors">隐私政策</span>
             <span className="hover:text-industrial-accent cursor-pointer transition-colors">服务条款</span>
-            <span className="hover:text-industrial-accent cursor-pointer transition-colors">网站地图</span>
+            <a href="/sitemap.xml" className="hover:text-industrial-accent cursor-pointer transition-colors" target="_blank">网站地图</a>
           </div>
         </div>
       </div>
