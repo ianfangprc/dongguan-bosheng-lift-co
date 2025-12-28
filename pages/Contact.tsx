@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { PHONE_NUMBER, EMAIL, WECHAT_QR_IMAGE, DOUYIN_QR_IMAGE } from '../constants';
 import { IMAGES } from '../images';
@@ -105,9 +104,9 @@ const Contact: React.FC = () => {
   return (
     <div className="pt-20 min-h-screen bg-industrial-900 text-slate-50 font-sans">
       <SEO 
-        title="联系我们 - 24小时救援热线" 
-        description="博升电梯提供7x24小时全天候紧急救援服务。获取电梯维保报价、新梯安装咨询，请拨打我们的服务热线或在线留言。"
-        keywords={['电梯报修', '电梯救援电话', '电梯维保价格', '东莞电梯电话', '博升联系方式']}
+        title="联系博升 - 电梯急修24小时热线_维保报价咨询_东莞博升电梯" 
+        description="需要电梯维修或保养报价？博升电梯提供7x24小时紧急救援服务。电话：133-6067-2276。地址：东莞市东城街道主山社区松毛岭街30号。"
+        keywords={['电梯报修电话', '电梯救援', '电梯维保价格', '东莞电梯公司电话', '博升联系方式']}
       />
 
       {/* Hero Header */}

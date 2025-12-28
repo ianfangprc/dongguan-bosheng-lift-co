@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PROJECTS, BROCHURE_LINK } from '../constants';
 import { IMAGES } from '../images';
@@ -9,9 +8,9 @@ const Projects: React.FC = () => {
   return (
     <div className="pt-20 min-h-screen bg-industrial-900 text-slate-50 font-sans">
       <SEO 
-        title="工程案例 - 成功项目展示" 
-        description="博升电梯在东莞及周边地区拥有丰富的项目经验，服务客户涵盖大型商业中心、高端住宅小区、工业园区等。查看我们的维保与安装案例。"
-        keywords={['电梯工程', '电梯安装案例', '东莞国贸中心电梯', '松山湖电梯维保', '小区电梯改造案例']}
+        title="工程案例 - 东莞及大湾区电梯安装维保成功案例_博升电梯" 
+        description="浏览博升电梯在东莞及周边的成功案例，涵盖商业中心、高端住宅、工业园区及酒店电梯维保与安装。见证品质，铸就经典。服务客户涵盖东莞、深圳等大湾区城市。"
+        keywords={['电梯工程案例', '东莞电梯维保案例', '电梯安装项目', '小区电梯改造案例', '工业货梯维修案例']}
       />
 
       {/* Hero Section */}

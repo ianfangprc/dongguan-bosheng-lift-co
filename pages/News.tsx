@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { INDUSTRY_NEWS_DATA } from '../constants';
 import { IMAGES } from '../images';
@@ -9,9 +8,9 @@ const News: React.FC = () => {
   return (
     <div className="pt-20 min-h-screen bg-industrial-900 text-slate-50 font-sans">
       <SEO 
-        title="行业资讯 - 新闻与动态" 
-        description="关注电梯行业最新动态，提供行业法规解读、技术趋势分析及安全知识科普。博升电梯为您实时汇编最有价值的行业信息。"
-        keywords={['电梯行业新闻', '特种设备法规', '电梯安全知识', '电梯技术动态', '加装电梯政策']}
+        title="电梯行业资讯 - 特种设备法规_电梯安全知识_博升动态" 
+        description="关注电梯行业最新动态，提供行业法规解读、技术趋势分析及安全知识科普。博升电梯为您实时汇编最有价值的行业信息，助您了解电梯安全。"
+        keywords={['电梯行业新闻', '特种设备法规', '电梯安全知识', '电梯技术动态', '加装电梯政策', '博升电梯新闻']}
       />
 
       {/* Hero Section */}

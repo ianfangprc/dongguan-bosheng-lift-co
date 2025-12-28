@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { COMPANY_NAME, ABOUT_IMAGES, COMPANY_VIDEO } from '../constants';
 import { IMAGES } from '../images';
@@ -46,9 +45,9 @@ const About: React.FC = () => {
   return (
     <div className="pt-24 md:pt-28 min-h-screen bg-industrial-900 text-slate-50 pb-20 font-sans">
       <SEO 
-        title="关于我们 - 公司简介与资质" 
-        description="东莞博升电梯有限公司成立于2020年，总部位于东莞。我们秉承“让技术被尊重，让服务有价值”的理念，拥有高级工程师及专业技术团队，致力于打造广东省专业度第一的电梯维保公司。"
-        keywords={['电梯资质', '东莞电梯公司', '博升电梯文化', '电梯工程师', '电梯研发']}
+        title="关于我们 - 东莞博升电梯 | 专业电梯维保服务" 
+        description="东莞博升电梯有限公司，成立于2020年，专注电梯维保、维修、销售与安装。团队专业，拥有特种设备A级资质，服务东莞及周边地区。"
+        keywords={['博升电梯简介', '东莞电梯公司', '电梯维保资质', '特种设备许可证', '电梯工程师团队']}
       />
       
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
@@ -77,8 +76,7 @@ const About: React.FC = () => {
                 <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4 md:mb-6">
                   关于博升
                 </h1>
-                {/* Updated: Added whitespace-nowrap to prevent wrapping on mobile */}
-                <h2 className="text-lg sm:text-xl md:text-3xl text-gray-200 font-light tracking-wide border-l-4 border-industrial-accent pl-4 md:pl-6 py-2 whitespace-nowrap overflow-x-visible">
+                <h2 className="text-xl md:text-3xl text-gray-200 font-light tracking-wide border-l-4 border-industrial-accent pl-4 md:pl-6 py-2">
                   您的安全，就是我们的使命！
                 </h2>
               </div>

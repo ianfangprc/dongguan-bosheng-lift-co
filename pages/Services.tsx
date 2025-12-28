@@ -74,9 +74,9 @@ const Services: React.FC = () => {
   return (
     <div className="pt-20 min-h-screen bg-industrial-900 text-slate-50 font-sans selection:bg-industrial-accent selection:text-white">
       <SEO 
-        title="核心业务 - 维修/保养/销售/改造" 
-        description="博升电梯提供全方位的电梯服务体系：包括定期巡检、隐患排查、老旧梯更新改造、整梯销售及技术培训。严格执行国标规范，确保每一台电梯安全运行。"
-        keywords={['电梯年检', '电梯大修', '旧梯更新', '老房加装电梯', '电梯技术培训', '乘客电梯', '载货电梯']}
+        title="核心业务 - 电梯维保_老旧电梯改造_整梯销售安装_博升电梯" 
+        description="博升电梯提供全方位电梯服务：专业电梯维护保养、老旧小区电梯加装改造、国内外品牌整梯销售（三菱/日立/奥的斯等）及24小时急修救援。东莞电梯服务首选。"
+        keywords={['电梯年检', '电梯大修', '旧梯更新', '老房加装电梯', '电梯技术培训', '乘客电梯', '载货电梯', '东莞电梯销售']}
         image={window.location.origin + IMAGES.BG_SERVICES}
         schema={serviceSchema}
       />

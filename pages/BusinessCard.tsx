@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { COMPANY_NAME, COMPANY_NAME_EN, ADDRESS, EMAIL, WECHAT_QR_IMAGE } from '../constants';
 import { Icons } from '../components/Icon';
@@ -31,7 +30,7 @@ const BusinessCard: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-neutral-100 flex flex-col items-center justify-center p-8 font-sans pb-32">
-      <SEO title="电子名片 - 房国勤" />
+      <SEO title="房国勤 - 东莞博升电梯有限公司 | 电子名片" />
       
       {/* Control Panel (Hidden when printing) */}
       <div className="mb-12 text-center space-y-4 print:hidden">
