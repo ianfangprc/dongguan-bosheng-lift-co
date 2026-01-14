@@ -79,4 +79,20 @@ export const IMAGES = {
   NEWS_4: '/assets/news/n4.jpg',
   NEWS_5: '/assets/news/n5.jpg',
   NEWS_6: '/assets/news/n6.jpg',
+  
+  // 公司资讯配图
+  // 如果本地图片 '/assets/news/company_interview.jpg' 存在，请取消注释并使用本地路径
+  // 目前使用 Unsplash 在线图片作为演示，确保封面显示正常
+  NEWS_COMPANY_INTERVIEW: '/assets/news/company_interview.jpg',
+  
+  // 维修资金申请配图 (会议/文档/规划主题)
+  NEWS_MAINTENANCE_FUND: '/assets/news/maintenance_fund.jpg',
+
+  // 房国勤创业故事配图 (电路板/技术研发主题)
+  NEWS_COMPANY_STORY: '/assets/news/company_story.jpg',
+  
+  // 创业故事内页插图 (建议替换为真实历史照片)
+  NEWS_STORY_1: '/assets/news/company_story_1.jpg', // 初到城市
+  NEWS_STORY_2: '/assets/news/company_story_2.jpg', // 钻研技术
+  NEWS_STORY_3: '/assets/news/company_story_3.jpg', // 电梯技术
 };

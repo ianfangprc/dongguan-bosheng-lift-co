@@ -3,7 +3,7 @@
   <!-- 首页 -->
   <url>
     <loc>https://www.boshenglift.com/</loc>
-    <lastmod>2025-01-28</lastmod>
+    <lastmod>2025-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -24,10 +24,10 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 行业资讯列表 -->
+  <!-- 行业资讯列表 (布局调整) -->
   <url>
     <loc>https://www.boshenglift.com/news</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -49,6 +49,24 @@
   </url>
 
   <!-- 具体新闻文章 (根据 constants.tsx 数据) -->
+  <url>
+    <loc>https://www.boshenglift.com/news/comp-3</loc>
+    <lastmod>2025-02-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.boshenglift.com/news/comp-2</loc>
+    <lastmod>2025-02-14</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.boshenglift.com/news/comp-1</loc>
+    <lastmod>2025-02-10</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.boshenglift.com/news/ind-1</loc>
     <lastmod>2025-01-15</lastmod>

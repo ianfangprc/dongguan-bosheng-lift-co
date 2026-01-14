@@ -1,5 +1,3 @@
-
-
 export const Page = {
   HOME: 'HOME',
   SERVICES: 'SERVICES',
@@ -36,4 +34,7 @@ export interface NewsItem {
   // If present, it's an external link
   externalUrl?: string; 
   content?: string;
+  // New fields for Company News
+  category?: 'industry' | 'company';
+  videoUrl?: string;
 }
