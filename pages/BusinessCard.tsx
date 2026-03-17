@@ -93,13 +93,13 @@ const BusinessCard: React.FC = () => {
               {/* Right: Brand & QR Area */}
               <div className="flex flex-col items-end justify-between h-full relative z-20">
                  {/* Top Right: Company */}
-                 <div className="flex flex-col items-end">
-                    {/* Brightened Company Name from gray-500 to gray-300 */}
-                    <div className="text-[1.8mm] font-bold text-gray-300 tracking-wider text-right">{COMPANY_NAME}</div>
+                 <div className="flex flex-col items-end mt-[3mm]">
+                    <div className="text-[2.2mm] font-bold text-white tracking-widest text-right mb-[1.5mm] drop-shadow-sm">{COMPANY_NAME}</div>
+                    <div className="w-[6mm] h-[1.5px] bg-amber-600 rounded-full"></div>
                  </div>
 
                  {/* Bottom Right: QR Code */}
-                 <div className="text-center">
+                 <div className="text-center mb-[2mm]">
                     <div className="bg-white p-[0.8mm] rounded-sm opacity-95 shadow-lg">
                        <img src={WECHAT_QR_IMAGE} alt="QR" className="w-[13mm] h-[13mm] block mix-blend-multiply" />
                     </div>
