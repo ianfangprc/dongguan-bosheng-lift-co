@@ -92,9 +92,8 @@ const BusinessCard: React.FC = () => {
 
               {/* Right: Brand & QR Area */}
               <div className="flex flex-col items-end justify-between h-full relative z-20">
-                 {/* Top Right: Logo & Company */}
+                 {/* Top Right: Company */}
                  <div className="flex flex-col items-end">
-                    <div className="w-[6mm] h-[6mm] text-white/90 mb-[2mm] drop-shadow-md"><Logo /></div>
                     {/* Brightened Company Name from gray-500 to gray-300 */}
                     <div className="text-[1.8mm] font-bold text-gray-300 tracking-wider text-right">{COMPANY_NAME}</div>
                  </div>
