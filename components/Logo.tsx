@@ -10,7 +10,7 @@ export const Logo: React.FC<LogoProps> = ({ className }) => {
       <img 
         src="/logo.png" 
         alt="Bosheng Elevator Logo" 
-        className="w-[160%] h-[160%] max-w-none object-contain"
+        className="w-[110%] h-[11ß0%] max-w-none object-contain"
         referrerPolicy="no-referrer"
       />
     </div>
