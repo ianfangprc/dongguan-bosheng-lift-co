@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { NAV_LINKS, COMPANY_NAME, COMPANY_NAME_EN } from '../constants';
 import { Icons } from './Icon';
 import { Logo } from './Logo';
@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-3 cursor-pointer" onClick={() => navigate('/')}>
+          <Link to="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer hover:opacity-90 transition-opacity">
             <div className="w-12 h-12 bg-white rounded-md p-1 flex items-center justify-center shadow-sm">
                <Logo className="w-full h-full" />
             </div>
@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
               {/* Removed 'uppercase' class to keep Title Case */}
               <span className="text-industrial-metal text-[10px] tracking-wider font-medium">{COMPANY_NAME_EN}</span>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:block">

@@ -6,11 +6,13 @@ interface LogoProps {
 
 export const Logo: React.FC<LogoProps> = ({ className }) => {
   return (
-    <img 
-      src="/logo.jpeg" 
-      alt="Bosheng Elevator Logo" 
-      className={`object-contain ${className || ''}`}
-      referrerPolicy="no-referrer"
-    />
+    <div className={`relative flex items-center justify-center overflow-hidden w-full h-full ${className || ''}`}>
+      <img 
+        src="/logo.png" 
+        alt="Bosheng Elevator Logo" 
+        className="w-[160%] h-[160%] max-w-none object-contain"
+        referrerPolicy="no-referrer"
+      />
+    </div>
   );
 };

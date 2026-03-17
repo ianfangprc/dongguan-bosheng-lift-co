@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
           
           {/* Column 1: Brand Info (Spans 5 columns) */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-6">
-             <div className="flex items-center gap-3">
+             <Link to="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-md p-1 flex items-center justify-center shadow-sm">
                   <Logo className="w-full h-full" />
                 </div>
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
                   <h2 className="text-white font-bold text-lg md:text-xl tracking-wide leading-none mb-1">{COMPANY_NAME}</h2>
                   <p className="text-[10px] md:text-xs text-industrial-metal tracking-wider font-medium">Dongguan Bosheng Lift Co., Ltd</p>
                 </div>
-             </div>
+             </Link>
              <p className="text-sm text-gray-400 leading-relaxed max-w-md text-justify">
                公司坐落于广东省东莞市东城街道，是一家集电梯控制系统研发、电梯销售、电梯维保、旧梯改造更新及技术培训于一体的综合性电梯企业。
              </p>
