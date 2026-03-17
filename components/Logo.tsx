@@ -1,5 +1,4 @@
 import React from 'react';
-import { logoBase64 } from '../logoBase64';
 
 interface LogoProps {
   className?: string;
@@ -8,7 +7,7 @@ interface LogoProps {
 export const Logo: React.FC<LogoProps> = ({ className }) => {
   return (
     <img 
-      src={logoBase64} 
+      src="/logo.jpeg" 
       alt="Bosheng Elevator Logo" 
       className={`object-contain ${className || ''}`}
       referrerPolicy="no-referrer"
