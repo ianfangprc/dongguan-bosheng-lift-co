@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
           
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-3 cursor-pointer" onClick={() => navigate('/')}>
-            <div className="w-12 h-12 text-industrial-accent">
+            <div className="w-12 h-12 bg-white rounded-md p-1 flex items-center justify-center shadow-sm">
                <Logo className="w-full h-full" />
             </div>
             <div className="flex flex-col justify-center">

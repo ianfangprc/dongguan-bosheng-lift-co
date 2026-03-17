@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
           {/* Column 1: Brand Info (Spans 5 columns) */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-6">
              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 md:w-12 md:h-12 text-industrial-accent">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-md p-1 flex items-center justify-center shadow-sm">
                   <Logo className="w-full h-full" />
                 </div>
                 <div>
